@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OLLAMAMODEL="openhermes"
+OLLAMAMODEL="mistral"
 
 # check if git is installed
 if ! [ -x "$(command -v git)" ]; then
@@ -18,7 +18,7 @@ STATUS=$(git status -v)
 
 OLLAMAMSG="
 Imagine being a developer, you just wrote some code and you're ready to commit it. 
-You run git status and see the following changes. Summerize the changes and write a commit message.
+You run 'git status -v' and see the following changes. Summerize the changes as a commit message that could be used to commit these changes.
 
 $STATUS
 "
