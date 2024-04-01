@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OLLAMAMODEL="mistral"
+OLLAMAMODEL="openhermes"
 
 # check if git is installed
 if ! [ -x "$(command -v git)" ]; then
@@ -10,7 +10,7 @@ fi
 
 # check if anything is staged
 if [ -z "$(git status --porcelain)" ]; then
-  echo 'Error: No changes to commit.' >&2
+  echo 'No changes to commit.' >&2
   exit 1
 fi
 
