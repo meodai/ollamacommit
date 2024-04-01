@@ -1,5 +1,7 @@
 #!/bin/bash
 
+OLLAMAMODEL="mistral"
+
 # check if git is installed
 if ! [ -x "$(command -v git)" ]; then
   echo 'Error: git is not installed.' >&2
@@ -15,15 +17,14 @@ fi
 STATUS=$(git status -v)
 
 OLLAMAMSG="
-write a short, imperative tense message that describes the change for 
-the following staged changes, only retrun the message that can be used with
-git commit -m 'message', nothing else, do not show any git commands:
+Imagine being a developer, you just wrote some code and you're ready to commit it. 
+You run git status and see the following changes. Summerize the changes and write a commit message.
 
 $STATUS
 "
 
 # feed the changes to ollama using git status -v
-echo "$OLLAMAMSG" | ollama run mistral
+echo "$OLLAMAMSG" | ollama run $OLLAMAMODEL
 
 # Exit the script with a success status
 exit 0
