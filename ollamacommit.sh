@@ -16,14 +16,14 @@ STATUS=$(git status -v)
 
 OLLAMAMSG="
 write a short, imperative tense message that describes the change for 
-the following staged changes:
+the following staged changes, only retrun the message that can be used with
+git commit -m 'message', nothing else, do not show any git commands:
 
 $STATUS
 "
 
 # feed the changes to ollama using git status -v
 echo "$OLLAMAMSG" | ollama run mistral
-
 
 # Exit the script with a success status
 exit 0
