@@ -2,6 +2,12 @@
 
 OLLAMAMODEL="mistral"
 
+# check if ollama is installed
+if ! [ -x "$(command -v ollama)" ]; then
+  echo 'Error: ollama is not installed. Get it from https://ollama.com/' >&2
+  exit 1
+fi
+
 # check if git is installed
 if ! [ -x "$(command -v git)" ]; then
   echo 'Error: git is not installed.' >&2
