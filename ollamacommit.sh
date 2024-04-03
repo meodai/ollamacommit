@@ -8,15 +8,14 @@ if ! [ -x "$(command -v ollama)" ]; then
   exit 1
 fi
 
-
 STATUS=$(git show)
 
 ollamacommitmsg() {
   OLLAMAMSG="
   Imagine being a developer, you just wrote some code and you're ready to commit 
-  it. You run 'git show' and see the following changes. Summerize the 
+  it. You run 'git show' and see the following changes. Summarize the 
   changes as a commit message that could be used to commit these changes. 
-  Imperative writing.
+  Imperative writing. Make it short, do not add the code changes themselves.
 
   $STATUS
   "
