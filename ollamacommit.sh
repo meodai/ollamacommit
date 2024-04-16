@@ -11,11 +11,18 @@ fi
 STATUS=$(git show)
 
 ollamacommitmsg() {
+  makeitshortstr='';
+  if [ -n "$1" ]; then
+    makeitshortstr='make it short';
+  fi
+
   OLLAMAMSG="
   Imagine being a developer, you just wrote some code and you're ready to commit 
   it. You run 'git show' and see the following changes. Summarize the 
   changes as a commit message that could be used to commit these changes. 
-  Imperative writing. Make it short, do not add the code changes themselves.
+  Imperative writing. Do not add the code changes themselves.
+  
+  $makeitshortstr
 
   $STATUS
   "
@@ -31,7 +38,6 @@ ollamacommitmsg() {
 }
 
 ollamacommitmsg
-
 
 # Exit the script with a success status
 exit 0
