@@ -1,8 +1,8 @@
 # Ollama Git Commit
 
-![Ollama Git Commit terminal demo](terminal.gif)
-
 A smart Git hook that uses Ollama to automatically generate meaningful commit messages based on your staged changes.
+
+![Ollama Git Commit terminal demo](terminal.gif)
 
 ## Features
 
