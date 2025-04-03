@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Use environment variable if set, otherwise default to mistral
-OLLAMA_MODEL="${OLLAMACOMMITMODEL:-mistral}"
+OLLAMA_MODEL="${OLLAMACOMMITMODEL:-llama3.2}"
 
 # Check if ollama is installed
 if ! command -v ollama &> /dev/null; then
