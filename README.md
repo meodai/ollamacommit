@@ -1,11 +1,13 @@
 # Ollama Git Commit
 
+![Ollama Git Commit terminal demo](terminal.gif)
+
 A smart Git hook that uses Ollama to automatically generate meaningful commit messages based on your staged changes.
 
 ## Features
 
 - Automatically generates commit messages using Ollama's AI capabilities
-- Works with any Ollama model (defaults to Mistral)
+- Works with any Ollama model (defaults to gemma3)
 - Provides options to accept, edit, or reject the generated message
 - Easy to install and configure
 - Lightweight with minimal dependencies
@@ -115,8 +117,8 @@ You can choose which Ollama model to use in three ways:
 2. **Edit the Script**:
    Open `ollamacommit.sh` and modify the model setting near the top:
    ```bash
-   # This line will use the environment variable if set, or fall back to "mistral"
-   OLLAMA_MODEL="${OLLAMACOMMITMODEL:-mistral}"
+   # This line will use the environment variable if set, or fall back to "gemma3"
+   OLLAMA_MODEL="${OLLAMACOMMITMODEL:-gemma3}"
    ```
 
 3. **Temporary Override**:
